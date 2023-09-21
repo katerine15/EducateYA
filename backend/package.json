@@ -2,9 +2,11 @@
   "name": "y",
   "version": "1.0.0",
   "description": "deserciones sena",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon index.js",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -19,5 +21,14 @@
   "bugs": {
     "url": "https://github.com/katerine15/EducateYA/issues"
   },
-  "homepage": "https://github.com/katerine15/EducateYA#readme"
+  "homepage": "https://github.com/katerine15/EducateYA#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.5.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
 }
