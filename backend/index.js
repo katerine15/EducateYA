@@ -4,8 +4,7 @@ import  express  from 'express';
 import conectarDB from './config/db.js';
 import dotenv from 'dotenv';
 import usuarioRoutes from './routes/usuarioRoutes.js';
-// import usuarioRouters from './routes/usuarioRoutes.js'
-// import proyectoRouters from './routes/proyectoRoutes.js'
+import cursoRoutes from './routes/cursoRoutes.js';
 // import tareaRoutes from './routes/tareaRoutes.js'
 
 const app = express();
@@ -19,6 +18,7 @@ conectarDB();
 
 //Routing
 app.use('/api/usuarios', usuarioRoutes)
+app.use('/api/cursos', cursoRoutes )
 
 const PORT = process.env.PORT || 4000;
 
