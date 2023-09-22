@@ -4,7 +4,7 @@ import {
     nuevoCurso,
     obtenerCurso,
     editarCurso,
-    eliminarCurso
+    eliminarCurso,
 } from '../controllers/cursoCrontroller.js';
 import checkAuth from '../middleware/checkAuth.js';
 
