@@ -1,6 +1,6 @@
 import express from 'express';
 import {
-    obtenerOfertaCursos,
+    obtenerCursos,
     nuevoCurso,
     obtenerCurso,
     editarCurso,
@@ -12,7 +12,7 @@ const router = express.Router();
 
 router
   .route('/')
-  .get(checkAuth, obtenerOfertaCursos)
+  .get(checkAuth, obtenerCursos)
   .post(checkAuth, nuevoCurso)
 
 router

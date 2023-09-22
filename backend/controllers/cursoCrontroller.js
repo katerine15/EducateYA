@@ -1,20 +1,14 @@
 import Oferta from "../models/Oferta.js";
 import Curso from "../models/Curso.js";
 
-const obtenerOfertaCursos = async (req, res) => {
-    const { id } = req.params;
-    const oferta = await Oferta.findById(id);
-
-    if (!oferta) {
-        return res.status(404).json({ msg: "No se encontró la oferta" });
+const obtenerCursos = async (req, res) => {
+    try {
+        const cursos = await Curso.find();
+        res.json(cursos);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ msg: "Error al obtener los cursos" });
     }
-    
-    if (!oferta.curso) {
-        return res.status(404).json({ msg: "La oferta no tiene un curso asociado" });
-    }
-    
-    const ofertaConCurso = await oferta.populate("curso").execPopulate();
-    res.json(ofertaConCurso);
 };
 
 const nuevoCurso = async (req, res) => {
@@ -104,7 +98,7 @@ const eliminarCurso = async (req, res) => {
 };
 
 export {
-    obtenerOfertaCursos,
+    obtenerCursos,
     nuevoCurso,
     obtenerCurso,
     editarCurso,
